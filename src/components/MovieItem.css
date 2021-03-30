@@ -1,0 +1,12 @@
+.MovieItem {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.MovieItem h3 {
+  color: blue;
+}
+.MovieItem h3.favourite {
+  color: red;
+}
