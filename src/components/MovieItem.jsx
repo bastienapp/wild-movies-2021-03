@@ -2,12 +2,15 @@ import { useState } from 'react';
 import './MovieItem.css';
 
 function MovieItem(props) {
-  const { title, poster, description, favourite } = props;
+  const { title, poster, description, favourite, changeFavouriteCount } = props;
 
   const [isFavourite, setIsFavourite] = useState(favourite);
 
   const handleClickFavourite = () => {
-    setIsFavourite(!isFavourite);
+    let isFavouriteChanged = !isFavourite;
+    setIsFavourite(isFavouriteChanged);
+    // prévenir le parent que j'ai ajouté ou un retiré un favori
+    changeFavouriteCount(isFavouriteChanged);
   };
 
   return (
